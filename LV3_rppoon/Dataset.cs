@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LV3_rppoon
 {
-    class Dataset
+    interface Prototype
+    {
+        Prototype Clone();
+    }
+    class Dataset : Prototype
     {
         private List<List<string>> data; 
         public Dataset()
@@ -33,6 +37,16 @@ namespace LV3_rppoon
                     this.data.Add(row);
                 }
             }
+        }
+        public IList<List<string>> GetData()
+        {
+            return
+                new System.Collections.ObjectModel.ReadOnlyCollection<List<string>>(data);
+        }
+        public void ClearData()
+        {
+            this.data.Clear();
+        }
         public Prototype Clone()
         {
             return (Prototype)this.MemberwiseClone();
