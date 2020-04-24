@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D16E9E25-CF7B-4A32-8B6F-9ADF718B98E7}"
 	ProjectSection(SolutionItems) = preProject
 		csv.txt = csv.txt
+		ProtectedFile.txt = ProtectedFile.txt
 	EndProjectSection
 EndProject
 Global

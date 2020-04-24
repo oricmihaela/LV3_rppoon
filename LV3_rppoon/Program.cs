@@ -10,7 +10,7 @@ namespace LV3_rppoon
     {
         static void Main(string[] args)
         {
-            Dataset originalDataset = new Dataset("csv.txt");
+            Dataset originalDataset = new Dataset("csv.txt");                     //1. ZADATAK testiranje
             Dataset copiedDataset = (Dataset)originalDataset.Clone();
 
             //ispis kopije originalDataset
