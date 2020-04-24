@@ -10,7 +10,8 @@ namespace LV3_rppoon
     {
         static void Main(string[] args)
         {
-            Dataset originalDataset = new Dataset("csv.txt");                     //1. ZADATAK testiranje
+            //1. ZADATAK testiranje
+            Dataset originalDataset = new Dataset("csv.txt");                     
             Dataset copiedDataset = (Dataset)originalDataset.Clone();
 
             //ispis kopije originalDataset
@@ -21,7 +22,14 @@ namespace LV3_rppoon
                     Console.Write(copiedDataset.GetData()[i][j]);
                 }
                 Console.WriteLine();
-            }         
+            }
+
+
+            //4. ZADATAK
+            ConsoleNotification newNotification = new ConsoleNotification("Mum", "New message!", "I'm coming home early!", DateTime.Now, Category.INFO, ConsoleColor.Red);
+            NotificationManager manager = new NotificationManager();
+            manager.Display(newNotification);
+            
         }
     }
 }
