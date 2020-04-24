@@ -10,6 +10,7 @@ namespace LV3_rppoon
     {
         static void Main(string[] args)
         {
+            asdf
         }
     }
 }
