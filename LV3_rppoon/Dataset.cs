@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace LV3_rppoon
 {
-    interface Prototype
-    {
-        Prototype Clone();
-    }
-    class Dataset : Prototype
+    class Dataset : IPrototype
     {
         private List<List<string>> data; 
         public Dataset()
@@ -47,9 +43,21 @@ namespace LV3_rppoon
         {
             this.data.Clear();
         }
-        public Prototype Clone()
+
+        public IPrototype Clone()                                   //1. ZADATAK
         {
-            return (Prototype)this.MemberwiseClone();
-        }
+            Dataset deepCopy = new Dataset();  //stvaranje novog objekta koji ce biti kopija
+
+            for (int i = 0; i < data.Count(); i++)
+            {
+                deepCopy.data.Add(new List<string>());
+                for (int j = 0; j < data[i].Count(); j++)
+                {
+                    deepCopy.data[i].Add(data[i][j]);
+                }
+            }
+
+            return deepCopy;
+        }
     }
 }
