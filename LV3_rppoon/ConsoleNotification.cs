@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LV3_rppoon
 {
     public enum Category { ERROR, ALERT, INFO }
-    public class ConsoleNotification
+    public class ConsoleNotification : IPrototype
     {
         public String Author { get; private set; }
         public String Title { get; private set; }
@@ -25,5 +25,14 @@ namespace LV3_rppoon
             this.Level = level;
             this.Color = color;
         }
+
+        //7.ZADATAK
+        IPrototype IPrototype.Clone()
+        {
+            throw new NotImplementedException();
+        }
+        /*U ovom primjeru postoji razlika u plitkom i dubokom kopiranju jer ce se bilo kakvom promijenom 
+         na kopiranoj notifikaciji promijeniti i izvorna iako bismo mozda nju htjeli ostaviti kakva je.*/
+
     }
 }
